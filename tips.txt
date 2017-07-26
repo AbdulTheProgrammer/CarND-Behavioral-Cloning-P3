@@ -1,0 +1,34 @@
+Behavioural Cloning Tips 
+
+-essential that the car drives down the center of the road 
+-drive counterclockwise to aid in generalizing the model
+-flipping the images is a quick way to augment the data
+-collecting data from the second track possibly 
+-don’t collect too much data
+-use SCP to copy data to EC2 instance
+-use python csv library to extract data
+-look into ipynb notebook for better image visualiztion during preprocessing step 
+
+TODOs: 
+-implement simple two layer network to start off w/ keras
+-implement Nvidia Net 
+-do lots of image preprocessing 
+-think/read about recovery case for car and sharp turns 
+
+Sources/Inspirations: 
+
+
+General Tips + Approach 
+
+https://medium.com/towards-data-science/behavioural-cloning-applied-to-self-driving-car-on-a-simulated-track-5365e1082230
+
+https://chatbotslife.com/using-augmentation-to-mimic-human-driving-496b569760a9
+
+http://www.jessicayung.com/behavioural-cloning-tips-for-tackling-project-3/
+
+
+NN Archs 
+
+https://arxiv.org/pdf/1608.01230v1.pdf
+
+https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf
