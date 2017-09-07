@@ -3,7 +3,7 @@ import base64
 from datetime import datetime
 import os
 import shutil
-
+import cv2
 import numpy as np
 import socketio
 import eventlet
@@ -61,9 +61,28 @@ def telemetry(sid, data):
         imgString = data["image"]
         image = Image.open(BytesIO(base64.b64decode(imgString)))
         image_array = np.asarray(image)
+        image_array = image_array[60:140,:]
+        image_array = cv2.cvtColor(image_array,cv2.COLOR_BGR2HSV)
         steering_angle = float(model.predict(image_array[None, :, :, :], batch_size=1))
 
         throttle = controller.update(float(speed))
+
+        # Adaptive throttle - Both Track
+        if (abs(float(speed)) < 10):
+            throttle = 0.5
+        else:
+            # When speed is below 20 then increase throttle by speed_factor
+            if (abs(float(speed)) < 25):
+                speed_factor = 1.35
+            else:
+                speed_factor = 1.0
+
+            if (abs(steering_angle) < 0.1):
+                throttle = 0.3 * speed_factor
+            elif (abs(steering_angle) < 0.5):
+                throttle = 0.2 * speed_factor
+            else:
+                throttle = 0.15 * speed_factor
 
         print(steering_angle, throttle)
         send_control(steering_angle, throttle)
