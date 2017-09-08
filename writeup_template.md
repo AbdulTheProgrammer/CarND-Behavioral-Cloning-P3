@@ -27,7 +27,7 @@ Using the Udacity provided simulator and my drive.py file, the car can be driven
 python drive.py model.h5
 ```
 
-The Behavioural Cloning Network.ipynb file contains the code for training and saving the convolutional neural network. The file shows the pipeline I used for training and validating the model, and it contains comments and other embedded documentation to explain how the code works.
+The model.ipynb file contains the code for training and saving the convolutional neural network. The file shows the pipeline I used for training and validating the model, and it contains comments and other embedded documentation to explain how the code works.
 
 ## Model Architecture
 
