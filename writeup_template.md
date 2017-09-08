@@ -1,11 +1,3 @@
-# **Behavioral Cloning**
-
-The goals / steps of this project are the following:
-* Use the simulator to collect data of good driving behavior
-* Build, a convolution neural network in Keras that predicts steering angles from images
-* Train and validate the model with a training and validation set
-* Test that the model successfully drives around track one without leaving the road
-
 
 
 [//]: # (Image References)
@@ -14,7 +6,14 @@ The goals / steps of this project are the following:
 [image2]: ./img/hist1.png "Histogram With Preprocessing"
 [image3]: ./img/preprocessed_images.png "Preprocessed Images"
 [image4]: ./img/hist2.png "Histogram Without Preprocessing"
----
+
+# **Behavioral Cloning**
+
+The goals / steps of this project are the following:
+* Use the simulator to collect data of good driving behavior
+* Build, a convolution neural network in Keras that predicts steering angles from images
+* Train and validate the model with a training and validation set
+* Test that the model successfully drives around track one without leaving the road
 
 My project includes the following files:
 * model.py containing the script to create and train the model
